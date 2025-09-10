@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Cadastro from "../src/componentes/cadastro"
-import Home from "../src/componentes/home"
+import Home from "./componentes/home"
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace />} />
          <Route path="/" element={<Navigate to="/cadastro" replace />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/home" element={<Home />} />
