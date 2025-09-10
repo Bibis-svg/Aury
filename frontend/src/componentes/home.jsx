@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import { useEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import "../styles/home.css";
+import { useEffect } from "react"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+import "../styles/home.css"
 
 const config = {
   theme: "system",
@@ -13,46 +13,46 @@ const config = {
   end: 260,
   scroll: true,
   debug: false,
-};
+}
 
 export default function Home() {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger)
 
-    const items = gsap.utils.toArray("ul li");
-    let scrollerScrub;
-    let dimmerScrub;
-    let chromaEntry;
-    let chromaExit;
+    const items = gsap.utils.toArray("ul li")
+    let scrollerScrub
+    let dimmerScrub
+    let chromaEntry
+    let chromaExit
 
     const update = () => {
-      document.documentElement.dataset.theme = config.theme;
-      document.documentElement.dataset.syncScrollbar = config.scroll;
-      document.documentElement.dataset.animate = config.animate;
-      document.documentElement.dataset.snap = config.snap;
-      document.documentElement.dataset.debug = config.debug;
-      document.documentElement.style.setProperty("--start", config.start);
-      document.documentElement.style.setProperty("--hue", config.start);
-      document.documentElement.style.setProperty("--end", config.end);
+      document.documentElement.dataset.theme = config.theme
+      document.documentElement.dataset.syncScrollbar = config.scroll
+      document.documentElement.dataset.animate = config.animate
+      document.documentElement.dataset.snap = config.snap
+      document.documentElement.dataset.debug = config.debug
+      document.documentElement.style.setProperty("--start", config.start)
+      document.documentElement.style.setProperty("--hue", config.start)
+      document.documentElement.style.setProperty("--end", config.end)
 
       if (!config.animate) {
-        chromaEntry?.scrollTrigger?.disable(true, false);
-        chromaExit?.scrollTrigger?.disable(true, false);
-        dimmerScrub?.disable(true, false);
-        scrollerScrub?.disable(true, false);
-        gsap.set(items, { opacity: 1 });
-        gsap.set(document.documentElement, { "--chroma": 0 });
+        chromaEntry?.scrollTrigger?.disable(true, false)
+        chromaExit?.scrollTrigger?.disable(true, false)
+        dimmerScrub?.disable(true, false)
+        scrollerScrub?.disable(true, false)
+        gsap.set(items, { opacity: 1 })
+        gsap.set(document.documentElement, { "--chroma": 0 })
       } else {
-        gsap.set(items, { opacity: (i) => (i !== 0 ? 0.2 : 1) });
-        dimmerScrub?.enable(true, true);
-        scrollerScrub?.enable(true, true);
-        chromaEntry?.scrollTrigger?.enable(true, true);
-        chromaExit?.scrollTrigger?.enable(true, true);
+        gsap.set(items, { opacity: (i) => (i !== 0 ? 0.2 : 1) })
+        dimmerScrub?.enable(true, true)
+        scrollerScrub?.enable(true, true)
+        chromaEntry?.scrollTrigger?.enable(true, true)
+        chromaExit?.scrollTrigger?.enable(true, true)
       }
-    };
+    }
 
     // Ajusta a opacidade inicial
-    gsap.set(items, { opacity: (i) => (i !== 0 ? 0.2 : 1) });
+    gsap.set(items, { opacity: (i) => (i !== 0 ? 0.2 : 1) })
 
     // Timeline para fade in/out conforme scroll
     const dimmer = gsap
@@ -67,8 +67,8 @@ export default function Home() {
           opacity: 0.2,
           stagger: 0.5,
         },
-        0
-      );
+        0,
+      )
 
     dimmerScrub = ScrollTrigger.create({
       trigger: items[0],
@@ -77,16 +77,12 @@ export default function Home() {
       end: "center center",
       animation: dimmer,
       scrub: 0.2,
-    });
+    })
 
     // Timeline para o hue (gradiente)
     const scroller = gsap
       .timeline()
-      .fromTo(
-        document.documentElement,
-        { "--hue": config.start },
-        { "--hue": config.end, ease: "none" }
-      );
+      .fromTo(document.documentElement, { "--hue": config.start }, { "--hue": config.end, ease: "none" })
 
     scrollerScrub = ScrollTrigger.create({
       trigger: items[0],
@@ -95,7 +91,7 @@ export default function Home() {
       end: "center center",
       animation: scroller,
       scrub: 0.2,
-    });
+    })
 
     chromaEntry = gsap.fromTo(
       document.documentElement,
@@ -109,8 +105,8 @@ export default function Home() {
           start: "center center+=40",
           end: "center center",
         },
-      }
-    );
+      },
+    )
 
     chromaExit = gsap.fromTo(
       document.documentElement,
@@ -124,33 +120,28 @@ export default function Home() {
           start: "center center",
           end: "center center-=40",
         },
-      }
-    );
+      },
+    )
 
-    update();
+    update()
 
     // Cleanup function
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+    }
+  }, [])
 
   return (
     <div>
       <header>
-        <img
-          src="./image/gradientiiir.png"
-          alt="imagem topo"
-          className="fixed-image"
-        />
+        <img src="/image/gradientiiir.png" alt="imagem topo" className="fixed-image" />
         <div className="title-top">
           <h1>Bem-vindo</h1>
         </div>
         <div className="text-center">
           <p>No meio de circuitos e máquinas a humanidade se perdeu.</p>
           <p>
-            Esse é um convite para reconectar-se com sua{" "}
-            <span className="highlight">alma</span>.
+            Esse é um convite para reconectar-se com sua <span className="highlight">alma</span>.
           </p>
         </div>
       </header>
@@ -191,19 +182,19 @@ export default function Home() {
           <h3>você passará por 4 arcos</h3>
           <div className="arcos">
             <div className="arco" data-hover="arte e cultura">
-              <img src="./image/esfera1.png" className="esfera esfera1" />
+              <img src="/image/esfera1.png" className="esfera esfera1" />
               <span>1.</span>
             </div>
             <div className="arco" data-hover="emoções">
-              <img src="./image/esfera2.png" className="esfera esfera2" />
+              <img src="/image/esfera2.png" className="esfera esfera2" />
               <span>2.</span>
             </div>
             <div className="arco" data-hover="inovação">
-              <img src="./image/esfera3.png" className="esfera esfera3" />
+              <img src="/image/esfera3.png" className="esfera esfera3" />
               <span>3.</span>
             </div>
             <div className="arco" data-hover="resiliência">
-              <img src="./image/esfera4.png" className="esfera esfera4" />
+              <img src="/image/esfera4.png" className="esfera esfera4" />
               <span>4.</span>
             </div>
           </div>
@@ -214,5 +205,5 @@ export default function Home() {
         </section>
       </main>
     </div>
-  );
+  )
 }
