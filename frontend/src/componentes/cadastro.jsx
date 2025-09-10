@@ -38,7 +38,7 @@ const CadastroUsuario = () => {
           const result = await response.json()
           alert(result.mensagem || "Usuário cadastrado com sucesso!")
           // Redireciona se o cadastro for bem-sucedido
-          window.location.href = "/frontend/src/componentes/home.jsx"
+          window.location.href = "/api/home"
         } else {
           const errorData = await response.json()
           alert(errorData.detail || "Erro ao cadastrar usuário!")
