@@ -68,11 +68,11 @@
 /* Div circular com efeito vidro */
 .circle-container {
   position: relative;
-  width: 90vh;
-  height: 90vh;
+  width: 80vh;
+  height: 80vh;
   border-radius: 50%;
-  /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); */
-  /* backdrop-filter: blur(42px); */
+   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); 
+   backdrop-filter: blur(42px); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,8 +173,8 @@ select {
   position: absolute;
   width: 70px;
   height: 70px;
-  border-radius: 50%;
-  background-color: #72678D;
+  border-radius: 50%; 
+  background-color: #7A5EB9;
   color: white;
   font-size: 28px;
   border: none;
@@ -185,11 +185,10 @@ select {
   align-items: center;
   z-index: 3;
 
-  /* posição inicial */
   bottom: 15%;
-  right: 20%;
+  right: -5%;
 }
 
 .floating-btn:hover {
-  background-color: #5c5270;
+  background-color:   #554184;
 }
