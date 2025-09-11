@@ -1,0 +1,215 @@
+.introjogo-container {
+  min-height: 100vh;
+  background-image: url("../assets/image/pagcod1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Pecita", sans-serif;
+}
+
+@font-face {
+  font-family: "Pecita";
+  src: url("../fonts/Pecita.woff2") format("woff2"),
+    url("../fonts/Pecita.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.holographic-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 182, 193, 0.4) 25%,
+    rgba(173, 216, 230, 0.4) 50%,
+    rgba(221, 160, 221, 0.4) 75%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+  transform: rotate(45deg);
+}
+
+.shape-2 {
+  width: 80px;
+  height: 80px;
+  top: 5%;
+  right: 15%;
+  animation-delay: 1s;
+  border-radius: 20px;
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  left: 2%;
+  animation-delay: 2s;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 0;
+}
+
+.shape-4 {
+  width: 90px;
+  height: 90px;
+  top: 60%;
+  left: 8%;
+  animation-delay: 3s;
+}
+
+.shape-5 {
+  width: 110px;
+  height: 110px;
+  bottom: 10%;
+  left: 10%;
+  animation-delay: 4s;
+  transform: rotate(-30deg);
+}
+
+.shape-6 {
+  width: 95px;
+  height: 95px;
+  bottom: 5%;
+  right: 5%;
+  animation-delay: 5s;
+  border-radius: 20px;
+}
+
+.shape-7 {
+  width: 85px;
+  height: 85px;
+  top: 40%;
+  right: 3%;
+  animation-delay: 2.5s;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 0;
+}
+
+.shape-8 {
+  width: 75px;
+  height: 75px;
+  bottom: 30%;
+  right: 8%;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+.content-wrapper {
+  max-width: 800px;
+  text-align: center;
+  padding: 40px 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.title {
+  font-size: 4rem;
+  color: #72678D;
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+    font-family: "Pecita", sans-serif;
+}
+
+.description-text {
+  margin-bottom: 3rem;
+}
+
+.description-text p {
+  font-size: 2rem;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.second-paragraph {
+  font-size: 1.3rem !important;
+  font-weight: 400 !important;
+  margin-top: 2rem !important;
+}
+
+.vamos-la-btn {
+ background-image: url("../assets/image/delete.png"); /* coloque o caminho da sua imagem */
+  background-position: center; /* centraliza a imagem */
+  border: none; /* remove borda */
+  background-color: transparent; /* remove fundo cinza */
+  color: white;
+  padding: 14px 40px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 301px;
+  height: 54px;
+}
+
+.vamos-la-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+.vamos-la-btn:active {
+  transform: translateY(0px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .description-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .content-wrapper {
+    padding: 20px 15px;
+  }
+
+  .holographic-shape {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .description-text p {
+    font-size: 1rem;
+  }
+
+  .vamos-la-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+}
