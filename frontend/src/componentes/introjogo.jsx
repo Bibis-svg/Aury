@@ -1,5 +1,3 @@
-"use client"
-
 import { useNavigate } from "react-router-dom"
 import "../styles/introjogo.css"
 
@@ -7,8 +5,7 @@ export default function IntroJogo() {
   const navigate = useNavigate()
 
   const handleVamosLa = () => {
-    // Navigate to next step or game
-    console.log("Vamos lá clicked!")
+    window.open("https://aury-ashy.vercel.app/jogopuzzle.html", "_blank")
   }
 
   return (
