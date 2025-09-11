@@ -21,7 +21,7 @@
   color: var(--p-color);
 }
 
-/* Efeito Glitch Overlay */
+
 .glitch-overlay {
   position: absolute;
   top: 0;
@@ -72,7 +72,7 @@
   }
 }
 
-/* Background com códigos flutuantes */
+
 .background-code {
   position: absolute;
   top: 0;
@@ -131,7 +131,7 @@
   }
 }
 
-/* Pop-up centralizado */
+
 .popup-container {
   position: absolute;
   top: 50%;
@@ -147,11 +147,11 @@
 
 .popup-image {
      background-image: url("../assets/image/fundo.png"); 
-     background-position: center; /* centraliza a imagem */
+     background-position: center; 
      background-size: cover;
      background-repeat: no-repeat;
-  border: none; /* remove borda */
-  background-color: transparent; /* remove fundo cinza */
+  border: none; 
+  background-color: transparent; 
   position: absolute;
   
   width: 80rem;
@@ -277,7 +277,7 @@
   }
 }
 
-/* Estilos para o título "ACESSO" */
+
 .popup-content h1.new-title {
   font-family: "Orbitron", sans-serif;
   color: var(--h1-color);
@@ -286,7 +286,7 @@
   text-shadow: 0 0 10px rgba(217, 158, 255, 0.5);
 }
 
-/* Estilos para o texto "Você está pronto?" */
+
 .popup-content .prompt-text {
   font-family: "Fira Code", monospace;
   font-size: 18px;
@@ -295,7 +295,7 @@
   line-height: 1.5;
 }
 
-/* Estilos para os botões "> SIM" e "> NÃO" */
+
 .popup-content .choice-button {
   font-family: "Orbitron", sans-serif;
   font-size: 14px;
@@ -315,7 +315,7 @@
   text-shadow: 0 0 15px rgba(217, 158, 255, 0.7);
 }
 
-/* Efeito de transição glitch */
+
 .transition-glitch-container {
   position: fixed;
   top: 0;

@@ -12,10 +12,10 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000", 
         "http://127.0.0.1:3000",
-        "https://aury-one.vercel.app",  # Your specific Vercel domain
-        "https://*.vercel.app",  # Vercel domains
-        "https://*.netlify.app", # Netlify domains
-        "*"  # Allow all origins for now - restrict in production
+        "https://aury-one.vercel.app", 
+        "https://*.vercel.app",
+        "https://*.netlify.app", 
+        "*"  
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE"],

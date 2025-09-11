@@ -1,30 +1,28 @@
-"use client"
-
 import { useState, useRef } from "react"
-import "../styles/cadastro.css" // Importa o arquivo CSS
-import { API_BASE_URL } from "../config/api.js" // Import API configuration
+import "../styles/cadastro.css" 
+import { API_BASE_URL } from "../config/api.js" 
 
-// Importação das imagens para uso no componente
+
 import elipse1 from "../assets/image/elipse1.png"
 import elipse2 from "../assets/image/elipse2.png"
 import elipse3 from "../assets/image/elipse3.png"
 
 const CadastroUsuario = () => {
-  // Estado para controlar se o cartão está virado
+ 
   const [flipped, setFlipped] = useState(false)
 
-  // Ref para acessar o elemento do formulário
+  
   const formRef = useRef(null)
 
-  // Lida com o clique no botão
+ 
   const handleFlip = async (e) => {
     e.preventDefault()
 
-    // Se o cartão não está virado, vira-o.
+    
     if (!flipped) {
       setFlipped(true)
     } else {
-      // Se já está virado, tenta enviar o formulário
+      
       const form = formRef.current
       const formData = new FormData(form)
 
@@ -37,7 +35,7 @@ const CadastroUsuario = () => {
         if (response.ok) {
           const result = await response.json()
           alert(result.mensagem || "Usuário cadastrado com sucesso!")
-          // Redireciona se o cadastro for bem-sucedido
+          
           window.location.href = "/home"
         } else {
           const errorData = await response.json()

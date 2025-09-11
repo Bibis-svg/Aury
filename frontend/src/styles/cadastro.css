@@ -12,7 +12,7 @@
   font-style: normal;
 }
 
-/* Background com gradiente */
+
 .body {
   margin: 0;
   height: 100vh;
@@ -24,7 +24,7 @@
   font-family: 'Pecita', sans-serif;
 }
 
-/* Camada intermediária com elipses */
+
 .background {
   position: absolute;
   width: 100%;
@@ -65,7 +65,7 @@
   50% { transform: scale(1.2); }
 }
 
-/* Div circular com efeito vidro */
+
 .circle-container {
   position: relative;
   width: 80vh;
@@ -79,14 +79,13 @@
   z-index: 2;
 }
 
-/* Formulário dentro do círculo */
+
 .form-container {
   width: 60%;
   text-align: center;
 }
 
 
-/* Flip Card Config */
 .flip-card {
   width: 90%;
   height: 90%;
@@ -130,7 +129,7 @@
   transform: rotateY(180deg);
 }
 
-/* Estilo Form */
+
 form {
   width: 70%;
   text-align: center;
@@ -149,7 +148,7 @@ input, select {
   font-family: 'Pecita', sans-serif;
 }
 
-/* Labels */
+
 label {
   display: block;
   margin-bottom: 8px;
@@ -158,7 +157,7 @@ label {
   text-align: left;
 }
 
-/* Select estilizado */
+
 select {
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='%2372678D' height='24' width='24' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
@@ -168,7 +167,7 @@ select {
   padding-right: 30px;
 }
 
-/* Botão circular flutuante */
+
 .floating-btn {
   position: absolute;
   width: 70px;

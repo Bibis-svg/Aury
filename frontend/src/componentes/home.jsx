@@ -1,9 +1,7 @@
-"use client"
-
 import "../styles/home.css"
 import { useNavigate } from "react-router-dom"
 
-// --- Imagens importadas ---
+
 import topImage from "/src/assets/image/gradientiiir.png"
 import esfera1 from "/src/assets/image/esfera1.png"
 import esfera2 from "/src/assets/image/esfera2.png"

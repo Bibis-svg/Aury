@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "../styles/tela-inicial.css"
@@ -10,7 +8,7 @@ const TelaInicial = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // Criar linhas de código flutuantes
+    
     const backgroundCode = document.querySelector(".background-code")
     const codeLines = [
       '<html lang="en">',
@@ -86,12 +84,12 @@ const TelaInicial = () => {
       }
     }
 
-    // Criar 70 linhas de código
+    
     for (let i = 0; i < 70; i++) {
       createCodeLine()
     }
 
-    // Cleanup function
+    
     return () => {
       if (backgroundCode) {
         backgroundCode.innerHTML = ""
@@ -113,7 +111,7 @@ const TelaInicial = () => {
   }
 
   const handleNoClick = () => {
-    // Criar efeito glitch e mostrar erro
+    
     startGlitchTransition()
   }
 
@@ -145,7 +143,7 @@ const TelaInicial = () => {
     glitchContainer.style.display = "block"
 
     setTimeout(() => {
-      // Redirecionar para página de erro ou mostrar mensagem
+      
       alert("O FUTURO DA HUMANIDADE FOI COMPROMETIDO")
       document.body.removeChild(glitchContainer)
       document.body.classList.remove("transitioning")
