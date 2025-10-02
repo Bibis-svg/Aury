@@ -38,7 +38,7 @@ export default function Home() {
   }, [playAudio, stopAudio]); 
 
   const handleSecondButton = () => {
-    navigate("/introjogo");
+    window.open("https://aury-ashy.vercel.app/jogopuzzle.html", "_blank")
   };
 
   return (
