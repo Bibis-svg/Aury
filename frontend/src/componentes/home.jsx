@@ -1,56 +1,82 @@
-import "../styles/home.css"
-import { useNavigate } from "react-router-dom"
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAudio } from "./AudioContext";
+import "../styles/home.css";
 
-
-import topImage from "/src/assets/image/gradientiiir.png"
-import esfera1 from "/src/assets/image/esfera1.png"
-import esfera2 from "/src/assets/image/esfera2.png"
-import esfera3 from "/src/assets/image/esfera3.png"
-import esfera4 from "/src/assets/image/esfera4.png"
-// --- NOVOS VETORES IMPORTADOS ---
-import vector17 from "/src/assets/image/Vector 17.png"
-import vector18 from "/src/assets/image/Vector 18.png"
+// Imports das imagens
+import topImage from "/src/assets/image/gradientiiir.png";
+import esfera1 from "/src/assets/image/esfera1.png";
+import esfera2 from "/src/assets/image/esfera2.png";
+import esfera3 from "/src/assets/image/esfera3.png";
+import esfera4 from "/src/assets/image/esfera4.png";
+import vector17 from "/src/assets/image/Vector 17.png";
+import vector18 from "/src/assets/image/Vector 18.png";
+import aury from "/src/assets/image/Aurynha.png";
 
 export default function Home() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { playAudio, stopAudio } = useAudio();
 
   const arcosData = [
     { id: 1, imgSrc: esfera1, initialContent: "1.", hoverContent: "arte e cultura" },
     { id: 2, imgSrc: esfera2, initialContent: "2.", hoverContent: "emoções" },
     { id: 3, imgSrc: esfera3, initialContent: "3.", hoverContent: "inovação" },
     { id: 4, imgSrc: esfera4, initialContent: "4.", hoverContent: "resistência" },
-  ]
+  ];
+
+  useEffect(() => {
+    playAudio('/barbie.mp3'); 
+
+    const timer = setTimeout(() => {
+      stopAudio();
+    }, 10000);
+
+    return () => {
+      clearTimeout(timer); 
+      stopAudio(); 
+    };
+  }, [playAudio, stopAudio]); 
 
   const handleSecondButton = () => {
-    navigate("/introjogo")
-  }
+    navigate("/introjogo");
+  };
 
   return (
     <div className="main-container">
-      <section className="intro-section">
-        {/* --- ESTRUTURA DA SEÇÃO INICIAL ATUALIZADA --- */}
-        <img src={topImage || "/placeholder.svg"} alt="imagem topo" className="fixed-image" />
-        <img src={vector17 || "/placeholder.svg"} alt="detalhe decorativo" className="vector-17" />
-        <img src={vector18 || "/placeholder.svg"} alt="detalhe decorativo" className="vector-18" />
+      <nav className="navbar">
+        <div className="logo">Aury</div>
+        <ul className="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#arcos">Arcos</a></li>
+          <li><a href="/loja">Loja</a></li>
+          <li><a href="#">Perfil</a></li>
+        </ul>
+      </nav>
+
+      <section id="inicio" className="intro-section">
+        <img src={topImage} alt="imagem topo" className="fixed-image" />
+        <img src={vector17} alt="detalhe decorativo" className="vector-17" />
+        <img src={vector18} alt="detalhe decorativo" className="vector-18" />
+        <img src={aury} alt="Ilustração da personagem Aurynha" className="aury-image" />
 
         <div className="title-top">
-          <h1>bem-vindo</h1>
+          <h1>bem vindo</h1>
         </div>
         <div className="text-center">
           <p>No meio de circuitos e máquinas a humanidade se perdeu.</p>
           <p>Esse é um convite para reconectar-se com sua alma.</p>
         </div>
         <div className="centered-arrow-container">
-          <button className="floating-btn1">→</button>
+          <a href="#arcos" className="floating-btn1">Comece já!</a>
         </div>
       </section>
 
-      <section className="arcos-section">
+      <section id="arcos" className="arcos-section">
         <h3>você passará por 4 arcos</h3>
         <div className="arcos">
           {arcosData.map((arco) => (
             <div className="arco" key={arco.id}>
-              <img src={arco.imgSrc || "/placeholder.svg"} className="esfera" alt={`Arco ${arco.id}`} />
+              <img src={arco.imgSrc} className="esfera" alt={`Arco ${arco.id}`} />
               <div className="arco-content">
                 <span className="initial-text">{arco.initialContent}</span>
                 <span className="hover-text">{arco.hoverContent}</span>
@@ -59,11 +85,11 @@ export default function Home() {
           ))}
         </div>
         <div className="back-arrow-container">
-          <button className="floating-btn1" onClick={handleSecondButton}>
+          <button className="floating-btn2" onClick={handleSecondButton}>
             →
           </button>
         </div>
       </section>
     </div>
-  )
+  );
 }

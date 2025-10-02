@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+
 :root {
   --bg-color: #0d0d0d;
   --code-back-color: #512978;
@@ -7,7 +10,7 @@
   --p-color: #ffffff;
   --button-bg: #916bf9;
   --checkbox-color: #251b66;
-  --text-button-color: #251b66;
+  --text-button-color: #251B66;
   --popup-border-color: #916bf9;
 }
 
@@ -279,9 +282,9 @@
 
 
 .popup-content h1.new-title {
-  font-family: "Orbitron", sans-serif;
+   font-family: "Orbitron", sans-serif; 
   color: var(--h1-color);
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
   text-shadow: 0 0 10px rgba(217, 158, 255, 0.5);
 }
@@ -289,7 +292,7 @@
 
 .popup-content .prompt-text {
   font-family: "Fira Code", monospace;
-  font-size: 18px;
+  font-size: 32px;
   color: var(--p-color);
   margin-bottom: 25px;
   line-height: 1.5;
@@ -297,9 +300,9 @@
 
 
 .popup-content .choice-button {
-  font-family: "Orbitron", sans-serif;
-  font-size: 14px;
-  color: #ffffff;
+   font-family: "Orbitron", sans-serif; /* Mudei para 'Digital Numbers' */
+  font-size: 25px;
+  color: var(--h1-color);
   background: none;
   border: none;
   cursor: pointer;
@@ -311,7 +314,7 @@
 }
 
 .popup-content .choice-button:hover {
-  color: #d99eff;
+  color: #e1d1eb;
   text-shadow: 0 0 15px rgba(217, 158, 255, 0.7);
 }
 

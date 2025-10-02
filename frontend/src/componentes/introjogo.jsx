@@ -11,16 +11,14 @@ export default function IntroJogo() {
   return (
     <div className="introjogo-container">
       <div className="content-wrapper">
-        <h1 className="title">Área da Tecnologia</h1>
+        <h1 className="title">Arco da resistência</h1>
 
         <div className="description-text">
           <p>
-            Decodifique os hieróglifos digitais e revele, nos fragmentos do código, a trajetória da nossa evolução. Cada
-            linha escondida guarda não apenas lógica, mas também memória daquilo que fomos. Perseverança e raciocínio
-            serão suas armas diante do labirinto tecnológico.
+            A história da humanidade foi colocada à prova diante de guerras, crises e desastres. Ainda assim, seguimos em frente, resistindo e nos reinventando a cada queda.
           </p>
 
-          <p className="second-paragraph">Mostre que ainda somos dignos de escrever nosso próprio futuro.</p>
+          <p className="second-paragraph">Neste arco, você enfrentará sua própria provação: superar os obstáculos que a vida põe em seu caminho.</p>
         </div>
 
         <button className="vamos-la-btn" onClick={handleVamosLa}>

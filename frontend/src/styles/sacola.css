@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap");
+
+.sacola-container {
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(180deg, #929ae9 0%, #e6e9ff 50%, #929ae9 100%);
+  min-height: 100vh;
+  color: #72678d;
+}
+
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  font-family: "Pecita", sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #695f8b;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.sacola-content {
+  padding-top: 180px;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sacola-title {
+  font-family: "Pecita", sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+}
+
+.sacola-card {
+  width: 90%;
+  max-width: 1000px;
+  background: rgba(216, 209, 245, 0.6);
+  border-radius: 30px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sacola-header {
+  display: grid;
+  grid-template-columns: 60px 80px 1fr 150px 60px;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(168, 166, 218, 0.5);
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.header-col {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.header-col:first-child {
+  grid-column: 1 / 4;
+}
+
+.sacola-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sacola-item {
+  display: grid;
+  grid-template-columns: 60px 80px 1fr 150px 60px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.sacola-item:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.item-checkbox input {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  background: rgba(216, 209, 245, 0.5);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.item-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.item-name {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.item-price {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: right;
+}
+
+.item-delete {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.item-delete:hover {
+  transform: scale(1.2);
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 3rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.sacola-actions {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.btn-cancel,
+.btn-confirm {
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 12px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancel {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-confirm {
+  background: #72678d;
+  color: #fff;
+}
+
+.btn-confirm:hover {
+  background: #5f5475;
+  transform: translateY(-2px);
+}

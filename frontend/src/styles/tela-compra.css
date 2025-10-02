@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap");
+
+.tela-compra-container {
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(180deg, #929ae9 0%, #e6e9ff 50%, #929ae9 100%);
+  min-height: 100vh;
+  color: #72678d;
+}
+
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  font-family: "Pecita", sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #695f8b;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.compra-content {
+  padding-top: 180px;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.compra-layout {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  width: 90%;
+}
+
+.compra-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.compra-right {
+  flex: 1;
+}
+
+.section-title {
+  font-family: "Pecita", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.produtos-section,
+.endereco-section,
+.pagamento-section {
+  background: rgba(216, 209, 245, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.produtos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.produto-item-compra {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.produto-img-small {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: rgba(216, 209, 245, 0.5);
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.produto-info-compra {
+  flex: 1;
+}
+
+.produto-info-compra h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.produto-info-compra p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.produto-price-compra {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.total-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #fff;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.total-value {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #72678d;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+}
+
+.form-input::placeholder {
+  color: rgba(114, 103, 141, 0.6);
+}
+
+.form-input.full-width {
+  grid-column: 1 / -1;
+}
+
+.btn-salvar {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 10px;
+  background: #72678d;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-salvar:hover {
+  background: #5f5475;
+  transform: translateY(-2px);
+}
+
+.payment-options {
+  display: flex;
+  gap: 2rem;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.payment-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.payment-icon {
+  font-size: 1.5rem;
+}
+
+.resumo-card {
+  background: rgba(216, 209, 245, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: sticky;
+  top: 180px;
+}
+
+.resumo-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  color: #fff;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.resumo-line.total-line {
+  border-bottom: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-comprar {
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: #72678d;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.btn-comprar:hover {
+  background: #5f5475;
+  transform: translateY(-2px);
+}

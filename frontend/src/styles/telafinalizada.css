@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap");
+
+.tela-finalizada-container {
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(180deg, #929ae9 0%, #e6e9ff 50%, #929ae9 100%);
+  min-height: 100vh;
+  color: #72678d;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  font-family: "Pecita", sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #695f8b;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.finalizada-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 180px;
+  padding-bottom: 4rem;
+}
+
+.finalizada-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  padding: 4rem 3rem;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.finalizada-title {
+  font-family: "Pecita", sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.finalizada-subtitle {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.btn-download-app {
+  padding: 1.2rem 3rem;
+  border: none;
+  border-radius: 50px;
+  background: #72678d;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-download-app:hover {
+  background: #5f5475;
+  transform: scale(1.05);
+}
+
+.finalizada-footer {
+  font-size: 1.1rem;
+  color: rgba(114, 103, 141, 0.8);
+  margin: 0;
+}

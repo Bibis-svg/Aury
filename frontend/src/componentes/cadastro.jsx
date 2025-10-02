@@ -1,28 +1,36 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import "../styles/cadastro.css" 
 import { API_BASE_URL } from "../config/api.js" 
-
+import { useAudio } from "./AudioContext.jsx"
 
 import elipse1 from "../assets/image/elipse1.png"
 import elipse2 from "../assets/image/elipse2.png"
 import elipse3 from "../assets/image/elipse3.png"
 
 const CadastroUsuario = () => {
- 
   const [flipped, setFlipped] = useState(false)
-
-  
   const formRef = useRef(null)
+  const { playAudio, stopAudio } = useAudio();
 
- 
+  useEffect(() => {
+    playAudio('/barbie.mp3');
+
+    const timer = setTimeout(() => {
+      stopAudio();
+    }, 10000);
+
+    return () => {
+      clearTimeout(timer);
+      stopAudio();
+    };
+  }, [playAudio, stopAudio]);
+
   const handleFlip = async (e) => {
     e.preventDefault()
 
-    
     if (!flipped) {
       setFlipped(true)
     } else {
-      
       const form = formRef.current
       const formData = new FormData(form)
 
@@ -35,7 +43,6 @@ const CadastroUsuario = () => {
         if (response.ok) {
           const result = await response.json()
           alert(result.mensagem || "Usuário cadastrado com sucesso!")
-          
           window.location.href = "/home"
         } else {
           const errorData = await response.json()

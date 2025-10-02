@@ -1,0 +1,712 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap");
+
+:root {
+  --cor-principal-texto: #72678D;
+  --cor-card-prototipo: #D8D1F5;
+  --cor-botoes: #9E92C8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.loja-container {
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--cor-principal-texto);
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #929AE9 0%, #E6E9FF 50%, #929AE9 100%);
+  min-height: 100vh;
+  position: relative;
+}
+
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  font-family: 'Pecita', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #695F8B;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.loja-hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 150px;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 5;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.font-pecita {
+  font-family: 'Pecita', sans-serif;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.hero-text-1 {
+  font-family: 'Pecita', sans-serif;
+  font-size: 36px;
+  color: #695F8B;
+  margin-bottom: 25px;
+  margin-top: 80px;
+  text-align: left;
+}
+
+.hero-text-2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 28px;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 100px;
+  text-align: left;
+}
+
+.hero-text-3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  color: var(--cor-principal-texto);
+  align-self: center;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.loja-btn {
+  background-color: var(--cor-principal-texto);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 22px 89px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  align-self: center;
+}
+
+.loja-btn:hover {
+  transform: scale(1.05);
+}
+
+.flor-vetor {
+  position: absolute;
+  top: 5%;
+  right: -5%;
+  width: 700px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.loja-content {
+  padding: 0 5%;
+  margin: 120px auto 4rem auto;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.loja-produtos-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 40px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  width: 100%;
+  max-width: 1400px;
+}
+
+.filtro-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.8rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #332E4D;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  z-index: 10;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  align-items: start;
+}
+
+.product-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  /* Adiciona transição suave para o scale */
+}
+
+.product-legend {
+  margin-top: 12px;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 81px;
+  height: 33px;
+  background-color: rgba(142, 132, 234, 0.8);
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.product-id-geek .product-card {
+  width: 561px;
+  height: 385px;
+  border-radius: 10px;
+}
+
+.product-id-1 .product-card,
+.product-id-2 .product-card,
+.product-id-3 .product-card,
+.product-id-4 .product-card {
+  width: 222px;
+  height: 163px;
+  border-radius: 10px;
+}
+
+.product-id-5 .product-card,
+.product-id-6 .product-card {
+  width: 268px;
+  height: 206px;
+  border-radius: 10px;
+}
+
+.product-id-7 .product-card {
+  width: 478px;
+  height: 206px;
+  border-radius: 10px;
+}
+
+.product-id-8 .product-card,
+.product-id-9 .product-card,
+.product-id-10 .product-card,
+.product-id-11 .product-card {
+  width: 242px;
+  height: 178px;
+  border-radius: 10px;
+}
+
+
+.product-id-3 .product-card,
+.product-id-4 .product-card,
+.product-id-6 .product-card,
+.product-id-8 .product-card,
+.product-id-9 .product-card,
+.product-id-10 .product-card,
+.product-id-11 .product-card {
+  padding: 0.5rem;
+}
+
+.product-id-7 .product-image {
+  transform: scale(2);
+}
+
+.product-id-4 .product-image {
+   transform: scale(1.5);
+}
+
+.product-id-11 .product-image {
+  transform: scale(1.3);
+}
+
+
+.product-item-wrapper.featured {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.product-item-wrapper.large-item {
+  grid-column: 3 / 5;
+  grid-row: 3 / 4;
+}
+
+.product-item-wrapper.featured .product-card {
+  padding: 0;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.featured-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 15, 53, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.featured-text {
+  text-align: left;
+}
+
+.featured-title {
+  font-family: 'Pecita', sans-serif;
+  font-size: 75px;
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+.featured-subtitle {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+}
+
+.featured-button {
+  width: 219px;
+  height: 55px;
+  background-color: rgba(142, 132, 234, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.featured-button:hover {
+  background-color: rgba(142, 132, 234, 1);
+  transform: scale(1.05);
+}
+
+.filtro-item {
+  position: relative;
+}
+
+.filtro-btn {
+  background-color: transparent;
+  border: none;
+  color: #332E4D;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.filtro-btn:hover {
+  background-color: rgba(216, 209, 245, 0.5);
+}
+
+.filtro-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.filtro-btn svg.arrow-up {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 20;
+  background-color: #f7f5ff;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0d9f5;
+  width: 240px;
+  padding: 1rem;
+  color: #332E4D;
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #e0d9f5;
+  font-size: 0.9rem;
+}
+
+.reset-btn {
+  background: none;
+  border: none;
+  color: var(--cor-principal-texto);
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.dropdown-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-container:hover input~.checkmark {
+  background-color: #eee;
+}
+
+.checkbox-container input:checked~.checkmark {
+  background-color: var(--cor-principal-texto);
+  border-color: var(--cor-principal-texto);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked~.checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.background-ellipses {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.background-ellipses img {
+  position: absolute;
+}
+
+#elipse1 {
+  width: 800px;
+  top: 150px;
+  left: 50px;
+}
+
+#elipse2 {
+  width: 700px;
+  bottom: -150px;
+  left: -200px;
+}
+
+#elipse3 {
+  width: 800px;
+  bottom: -250px;
+  right: -250px;
+}
+
+#elipse4 {
+  width: 600px;
+  top: 105vh;
+  left: -250px;
+}
+
+#elipse5 {
+  width: 650px;
+  bottom: 150px;
+  right: -300px;
+}
+
+
+.plans-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Espaço entre o CTA e o card de planos */
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    position: relative; /* Para a elipse de fundo */
+}
+
+.plans-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    color: #fff;
+    z-index: 2; /* Garante que fique na frente da elipse */
+}
+
+.plans-cta h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    max-width: 600px;
+}
+
+.plans-button {
+   text-decoration: none;
+    width: 330px; /* Largura ajustada */
+    height: 65px;  /* Altura ajustada */
+    background-color: #72678D;
+    border-radius: 77px;
+    border: none;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plans-button:hover {
+    transform: scale(1.05);
+    background-color: #5f5475;
+}
+
+.plans-card {
+    width: 100%;
+    max-width: 1200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    padding: 3rem;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    margin-bottom: 3rem;
+}
+
+.plan-header-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.plan-image-card {
+    width: 210px;
+    height: 202px;
+    background-color: #8C88DC;
+    border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-image-card img {
+    max-width: 100%;
+    max-height: 500px;
+}
+
+.plan-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 45px;
+    color: #fff;
+    font-weight: normal;
+    margin: 0;
+}
+
+.plan-price {
+    color: #72678D;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.plan-price .price-small {
+    font-size: 27px;
+    font-weight: normal;
+}
+
+.plan-features-table {
+    grid-column: 1 / -1; /* Tabela ocupa todas as 3 colunas */
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr; /* 1 coluna para título, 3 para valores */
+    height: 85px;
+    align-items: center;
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 32px;
+}
+
+.feature-title {
+    padding-left: 2rem;
+    text-align: left;
+    font-weight: bold;
+}
+
+.feature-value {
+    text-align: center;
+}
+
+.checkmark-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #72678D; /* Cor do check */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin: auto; /* Centraliza o ícone */
+}

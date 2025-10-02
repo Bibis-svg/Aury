@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap"); 
 @import url("https://unpkg.com/normalize.css") layer(normalize);
 
 * {
@@ -32,6 +33,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 .main-container {
   min-height: 100vh;
@@ -49,45 +54,43 @@ body::-webkit-scrollbar {
   position: relative;
   text-align: center;
   padding: 2rem;
-  overflow: hidden; 
+  overflow: hidden;
 }
-
-
 
 .fixed-image {
   position: absolute;
-  top: -60%; 
+  top: -60%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1200px; 
+  max-width: 1200px;
   z-index: 0;
 }
 
 
 .vector-17, .vector-18 {
     position: absolute;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 1;
 }
 
-.vector-17 { 
+.vector-17 {
     top: -70px;
     right: -100px;
     width: 450px;
 }
 
-.vector-18 { 
-    top: 65%;
-    left: -80px;
+.vector-18 {
+    top: 60%;
+    left: -180px;
     transform: translateY(-50%);
     width: 550px;
 }
 
 .title-top {
-  position: relative; 
-  z-index: 2; 
-  margin-top: -10rem; 
+  position: relative;
+  z-index: 2;
+  margin-top: -5rem;
   margin-bottom: 100px;
 }
 
@@ -114,7 +117,7 @@ p {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   margin-top: 2rem;
   position: relative;
   z-index: 2;
@@ -133,7 +136,6 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 .arcos-section h3 {
   font-size: 2.5rem;
@@ -213,10 +215,35 @@ p {
 
 
 .floating-btn1 {
+  width: 350px;
+  height: 70px;
+  border-radius: 40px;
+  background-color: #7A5EB9;
+  font-family: "Pecita", sans-serif;
+  color: white;
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+
+.floating-btn1:hover {
+  background-color:transparent;
+  border: 1px solid #7A5EB9;
+  color:#7A5EB9;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.floating-btn2 {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #7A5EB9; 
+  background-color: #7A5EB9;
   font-family: "Pecita", sans-serif;
   color: white;
   font-size: 32px;
@@ -239,4 +266,57 @@ p {
   100% {
     transform: translateY(0px);
   }
+}
+
+.navbar {
+  position: fixed; 
+  top: 1.5rem; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; 
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem; 
+  z-index: 10;
+  
+  background: rgba(255, 255, 255, 0.10); 
+  border-radius: 20px; 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #72678D; /* <-- COR ALTERADA */
+  font-size: 1.5rem;
+  font-family: "Josefin Sans", sans-serif; /* <-- FONTE ALTERADA */
+  font-weight: 400; /* Ajustado para um peso que Josefin Sans suporta bem */
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff; /* Mudei o hover para branco, para dar um bom contraste */
+}
+
+.aury-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 320px; /* Ajuste o tamanho conforme necessário */
+  z-index: 1;
 }

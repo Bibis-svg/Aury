@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap");
+
 .introjogo-container {
   min-height: 100vh;
   background-image: url("../assets/image/pagcod1.png");
@@ -9,7 +11,9 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  font-family: "Pecita", sans-serif;
+   font-family: "Josefin Sans", sans-serif;
+   font-size: 1.3rem;
+  font-weight: 400;
 }
 
 @font-face {

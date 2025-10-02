@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "../styles/tela-inicial.css"
+import { useAudio } from "./AudioContext"
 
 const TelaInicial = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [showNewContent, setShowNewContent] = useState(false)
   const navigate = useNavigate()
+  const { playAudio, stopAudio } = useAudio() 
+
+  useEffect(() => {
+    playAudio('/audiocyber.mp3', true); 
+  }, [playAudio]);
 
   useEffect(() => {
     
@@ -107,47 +113,13 @@ const TelaInicial = () => {
   }
 
   const handleYesClick = () => {
-    navigate("/cadastro")
+    stopAudio();
+    navigate("/transicao-video")
   }
 
   const handleNoClick = () => {
-    
-    startGlitchTransition()
-  }
-
-  const startGlitchTransition = () => {
-    document.body.classList.add("transitioning")
-
-    const glitchContainer = document.createElement("div")
-    glitchContainer.classList.add("transition-glitch-container")
-
-    const numSquares = 100
-    for (let i = 0; i < numSquares; i++) {
-      const square = document.createElement("div")
-      square.classList.add("glitch-square")
-
-      square.style.top = Math.random() * 100 + "vh"
-      square.style.left = Math.random() * 100 + "vw"
-      square.style.width = Math.random() * 10 + 5 + "vw"
-      square.style.height = Math.random() * 10 + 5 + "vw"
-
-      const randomRotate = Math.random() * 360 - 180
-      const randomHue = Math.random() * 180 - 90
-      square.style.setProperty("--random-rotate", `${randomRotate}deg`)
-      square.style.setProperty("--random-hue", `${randomHue}deg`)
-
-      glitchContainer.appendChild(square)
-    }
-
-    document.body.appendChild(glitchContainer)
-    glitchContainer.style.display = "block"
-
-    setTimeout(() => {
-      
-      alert("O FUTURO DA HUMANIDADE FOI COMPROMETIDO")
-      document.body.removeChild(glitchContainer)
-      document.body.classList.remove("transitioning")
-    }, 1000)
+    stopAudio();
+    navigate("/audiocyber-alert");
   }
 
   return (
@@ -191,7 +163,7 @@ const TelaInicial = () => {
                 &gt; SIM
               </button>
               <button className="choice-button" onClick={handleNoClick}>
-                &gt; NÃO
+                &gt; Não
               </button>
             </div>
           )}
