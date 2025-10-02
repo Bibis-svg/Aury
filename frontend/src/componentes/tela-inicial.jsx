@@ -150,7 +150,7 @@ const TelaInicial = () => {
                 ) : (
                   <button className="human-check-button" onClick={handleHumanCheck}>
                     <span className="checkbox"></span>
-                    Eu não sou humano
+                    Eu não sou robô
                   </button>
                 )}
               </div>

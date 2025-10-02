@@ -1,23 +1,11 @@
-"use client"
-
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { BsBox } from 'react-icons/bs';
 import "/src/styles/loja.css";
-import DropdownFilter from './DropdownFilter';
 
-// IMAGENS PRODUTOS
-import gridBackgroundImg from "/src/assets/image/grid-background.png";
-import colecaoGeekImg from "/src/assets/image/colecao-geek.png";
-import boneImg from "/src/assets/image/bone.png";
-import cameraImg from "/src/assets/image/camera.png";
-import bolaImg from "/src/assets/image/bola.png";
-import raqueteImg from "/src/assets/image/raquete.png";
-import vinilBeatlesImg from "/src/assets/image/vinil-beatles.png";
-import tenisImg from "/src/assets/image/tenis.png";
-import guitarraImg from "/src/assets/image/guitarra.png";
-import camisetaImg from "/src/assets/image/camiseta.png";
-import relogioImg from "/src/assets/image/relogio.png";
-import vinilGagaImg from "/src/assets/image/vinil-gaga.png";
-import snoopyImg from "/src/assets/image/snoopy.png";
+import DropdownFilter from './DropdownFilter';
+import ModelViewer from './ModelViewer';
+import { products } from '../data/products'; 
 
 // IMAGENS GERAIS E DECORATIVAS
 import florVetor from "/src/assets/image/flor-vetor.png";
@@ -26,6 +14,7 @@ import elipse2 from "/src/assets/image/Ellipse-roxa-2.png";
 import elipse3 from "/src/assets/image/Ellipse-roxa-3.png";
 import elipse4 from "/src/assets/image/Ellipse-amarelo-1.png";
 import elipse5 from "/src/assets/image/Ellipse-amarelo-2.png";
+import gridBackgroundImg from "/src/assets/image/grid-background.png";
 
 // IMAGENS PLANOS
 import plansBackgroundImg from "/src/assets/image/grid-background-produtos.png";
@@ -33,40 +22,15 @@ import caixaGrandeImg from "/src/assets/image/caixa-grande.png";
 import caixaMediaImg from "/src/assets/image/caixa-media.png";
 import ticketImg from "/src/assets/image/ticket.png";
 
-// DADOS DOS PRODUTOS
-const products = [
-    { id: "geek", name: "Coleção GEEK", subtitle: "Coleção completa de quadrinhos", imageSrc: colecaoGeekImg, isFeatured: true, bgColor: "#A8A6DA" },
-    { id: 1, name: "Boné infantil", price: "R$ 15", imageSrc: boneImg, bgColor: "#B2B0D8" },
-    { id: 2, name: "Câmera vintage", price: "R$ 30", imageSrc: cameraImg, bgColor: "#8C88DC" },
-    { id: 3, name: "Bola antiga", price: "R$ 35", imageSrc: bolaImg, bgColor: "#D1CDE5" },
-    { id: 4, name: "Raquete de tênis", price: "R$ 35", imageSrc: raqueteImg, bgColor: "#A8A7D9" },
-    { id: 5, name: "Vinil Beatles", price: "R$ 80", imageSrc: vinilBeatlesImg, bgColor: "#9D9BDA" },
-    { id: 6, name: "Tênis 38/40", price: "R$ 95", imageSrc: tenisImg, bgColor: "#CCCCD8" },
-    { id: 7, name: "Guitarra Fender Stratocaster", price: "R$ 150", imageSrc: guitarraImg, isLarge: true, bgColor: "#8C88DC" },
-    { id: 8, name: "Camiseta banda vintage", price: "R$ 40", imageSrc: camisetaImg, bgColor: "#B2B0D8" },
-    { id: 9, name: "Relógio", price: "R$ 200", imageSrc: relogioImg, bgColor: "#8C88DC" },
-    { id: 10, name: "Vinil Lady Gaga", price: "R$ 190", imageSrc: vinilGagaImg, bgColor: "#D1CDE5" },
-    { id: 11, name: "Pelúcia Snoopy", price: "R$ 100", imageSrc: snoopyImg, bgColor: "#9D9BDA" },
-];
-
 export default function Loja() {
     const navigate = useNavigate();
+    const [selectedModel, setSelectedModel] = useState(null);
 
     // Opções para os filtros
     const faixaEtariaOptions = ['Crianças', 'Adolescente', 'Adulto', 'Idoso'];
     const precoOptions = ['Até R$50', 'R$50 - R$100', 'R$100 - R$200', 'Acima de R$200'];
     const tipoOptions = ['Roupas', 'Acessórios', 'Decoração', 'Música'];
     const generoOptions = ['Masculino', 'Feminino', 'Unissex'];
-
-    // Função para navegar para a página de detalhes do produto
-    const handleProductClick = (product) => {
-        // Se o produto for o "destaque", não faz nada, pois ele já tem um botão próprio
-        if (product.isFeatured) {
-            return;
-        }
-        // Navega para a rota de info do produto, passando os dados do produto
-        navigate("/info-produto", { state: { product } });
-    };
 
     return (
         <div className="loja-container">
@@ -124,33 +88,50 @@ export default function Loja() {
                                 key={product.id}
                                 className={`product-item-wrapper product-id-${product.id} ${product.isFeatured ? "featured" : ""} ${product.isLarge ? "large-item" : ""}`}
                             >
-                                <div
-                                    className="product-card"
-                                    onClick={() => handleProductClick(product)}
-                                    style={{
-                                        backgroundColor: product.bgColor,
-                                        cursor: product.isFeatured ? "default" : "pointer", // Muda o cursor para indicar que é clicável
-                                    }}
-                                >
-                                    <img src={product.imageSrc} alt={product.name} className="product-image" />
+                                <Link to={`/produto/${product.id}`} className="product-link" style={{ pointerEvents: product.isFeatured ? 'none' : 'auto' }}>
+                                    <div
+                                        className="product-card"
+                                        style={{
+                                            backgroundColor: product.bgColor,
+                                            cursor: product.isFeatured ? "default" : "pointer",
+                                        }}
+                                    >
+                                        <img src={product.imageSrc} alt={product.name} className="product-image" />
 
-                                    {product.isFeatured ? (
-                                        <div className="featured-overlay">
-                                            <div className="featured-text">
-                                                <h3 className="featured-title">{product.name}</h3>
-                                                <p className="featured-subtitle">{product.subtitle}</p>
+                                        {product.isFeatured ? (
+                                            <div className="featured-overlay">
+                                                <div className="featured-text">
+                                                    <h3 className="featured-title">{product.name}</h3>
+                                                    <p className="featured-subtitle">{product.subtitle}</p>
+                                                </div>
+                                                <button
+                                                    className="featured-button"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        navigate(`/produto/${product.id}`);
+                                                    }}
+                                                >
+                                                    Compre agora
+                                                </button>
                                             </div>
-                                            <button
-                                                className="featured-button"
-                                                onClick={() => navigate("/info-produto", { state: { product } })}
-                                            >
-                                                Compre agora
-                                            </button>
-                                        </div>
-                                    ) : (
-                                        <div className="price-tag">{product.price}</div>
-                                    )}
-                                </div>
+                                        ) : (
+                                            <div className="price-tag">
+                                                {product.price}
+                                                {product.model3d_url && (
+                                                    <button 
+                                                        className="icon-3d-trigger"
+                                                        onClick={(e) => {
+                                                            e.preventDefault();
+                                                            setSelectedModel(product.model3d_url);
+                                                        }}
+                                                    >
+                                                        <BsBox />
+                                                    </button>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                </Link>
                                 {!product.isFeatured && (
                                     <p className="product-legend">{product.name}</p>
                                 )}
@@ -221,6 +202,14 @@ export default function Loja() {
                     </div>
                 </div>
             </section>
+
+            {/* Renderização do visualizador 3D */}
+            {selectedModel && (
+                <ModelViewer 
+                    modelUrl={selectedModel} 
+                    onClose={() => setSelectedModel(null)} 
+                />
+            )}
         </div>
     );
 }

@@ -228,7 +228,6 @@ html {
   max-height: 100%;
   object-fit: contain;
   transition: transform 0.3s ease;
-  /* Adiciona transição suave para o scale */
 }
 
 .product-legend {
@@ -563,10 +562,10 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; /* Espaço entre o CTA e o card de planos */
+    gap: 40px;
     padding: 4rem 2rem;
     box-sizing: border-box;
-    position: relative; /* Para a elipse de fundo */
+    position: relative; 
 }
 
 .plans-cta {
@@ -576,7 +575,7 @@ html {
     gap: 30px;
     text-align: center;
     color: #fff;
-    z-index: 2; /* Garante que fique na frente da elipse */
+    z-index: 2; 
 }
 
 .plans-cta h2 {
@@ -588,8 +587,8 @@ html {
 
 .plans-button {
    text-decoration: none;
-    width: 330px; /* Largura ajustada */
-    height: 65px;  /* Altura ajustada */
+    width: 330px; 
+    height: 65px;  
     background-color: #72678D;
     border-radius: 77px;
     border: none;
@@ -671,7 +670,7 @@ html {
 }
 
 .plan-features-table {
-    grid-column: 1 / -1; /* Tabela ocupa todas as 3 colunas */
+    grid-column: 1 / -1;
     width: 100%;
     border-radius: 15px;
     overflow: hidden;
@@ -679,7 +678,7 @@ html {
 
 .feature-row {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr; /* 1 coluna para título, 3 para valores */
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;  
     height: 85px;
     align-items: center;
     color: #fff;
@@ -690,11 +689,14 @@ html {
 .feature-title {
     padding-left: 2rem;
     text-align: left;
-    font-weight: bold;
+    font-weight: regular;
+    font-size: 30px;
 }
 
 .feature-value {
     text-align: center;
+    font-weight: regular;
+    font-size: 28px;
 }
 
 .checkmark-icon {
@@ -702,11 +704,121 @@ html {
     height: 40px;
     border-radius: 50%;
     background-color: #fff;
-    color: #72678D; /* Cor do check */
+    color: #72678D;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 28px;
     font-weight: bold;
-    margin: auto; /* Centraliza o ícone */
+    margin: auto; 
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.price-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-3d-trigger {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.icon-3d-trigger:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.model-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.canvas-container {
+  width: 90%;
+  height: 90%;
+  max-width: 1200px;
+  max-height: 800px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #c5b8ff 0%, #9d85ff 100%);
+}
+
+.close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.loading-text {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 45%;
+}
+
+.viewer-instructions {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Pecita", sans-serif;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7); 
+  text-shadow: 0 2px 10px rgba(45, 35, 80, 0.3); 
+  pointer-events: none; 
+  text-align: center;
+  line-height: 1.5;
+  background: none;
+  padding: 0;
+}
+
+.viewer-instructions p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.viewer-instructions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.viewer-instructions li {
+  margin-top: 0.25rem;
 }

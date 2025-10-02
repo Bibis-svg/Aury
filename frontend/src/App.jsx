@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-// Caminhos corrigidos para a pasta 'componentes'
 import { CartProvider } from "./componentes/CartContext";
 import { AudioProvider } from "./componentes/AudioContext";
 
@@ -17,7 +16,6 @@ import TelaFinalizada from "./componentes/telafinalizada";
 
 function App() {
   return (
-    // Envolve tudo com o CartProvider
     <CartProvider>
       <AudioProvider>
         <BrowserRouter>
@@ -30,7 +28,7 @@ function App() {
             <Route path="/introjogo" element={<IntroJogo />} />
             <Route path="/transicao-video" element={<VideoTransition targetPath="/cadastro" />} />
             <Route path="/audiocyber-alert" element={<AudioCyber />} />
-            <Route path="/info-produto" element={<InfoProduto />} />
+            <Route path="/produto/:productId" element={<InfoProduto />} />
             <Route path="/sacola" element={<Sacola />} />
             <Route path="/tela-compra" element={<TelaCompra />} />
             <Route path="/tela-finalizada" element={<TelaFinalizada />} />

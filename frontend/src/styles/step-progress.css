@@ -1,68 +1,76 @@
-/* Container do StepProgress */
-.step-progress {
+.step-progress-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  margin-top: 80px; /* distância segura abaixo da navbar */
-  margin-bottom: 3rem;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 109px;
+  margin-bottom: 2rem;
+}
+
+.step-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   position: relative;
-  z-index: 5; /* garante que fica acima do fundo, mas abaixo do conteúdo principal */
+  width: 100%;
+  max-width: 700px;
+  margin-top: 0;
+  margin-bottom: 2rem;
 }
 
 
-/* Cada passo */
+.step-progress::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  transform: translateY(-50%);
+  left: 32.5px;
+  right: 32.5px;
+  height: 13px;
+  background-color: #8E84EA; 
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25); 
+  border-radius: 4px; 
+  z-index: 1;
+}
+
 .step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 400;
   text-align: center;
-  cursor: default;
+  position: relative;
+  z-index: 2;
+  background: transparent;
 }
 
-/* Círculo com ícone */
 .step-icon {
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem;
-  margin-bottom: 0.3rem;
-  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  transition: all 0.4s ease;
+  background-color: #8E84EA; 
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25); 
 }
 
-/* Passo já alcançado */
-.step.active .step-icon {
-  background: rgba(255, 255, 255, 0.35);
-}
 
-/* Passo atual */
 .step.current .step-icon {
-  background: #9d85ff;
-  color: #fff;
-  font-weight: bold;
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(157, 133, 255, 0.6);
+  background: #7A5EB9;
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(138, 99, 210, 0.8);
 }
 
-/* Texto abaixo do ícone */
 .step-label {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 0.85rem;
-  color: #fff;
-  text-align: center;
+  font-size: 20px;
+  color: #ffff;
+  font-weight: 300;
   max-width: 100px;
-  white-space: nowrap;
+  margin-top: 10px;
 }
