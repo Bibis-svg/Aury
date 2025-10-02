@@ -159,10 +159,10 @@
 }
 
 .vamos-la-btn {
- background-image: url("../assets/image/delete.png"); /* coloque o caminho da sua imagem */
-  background-position: center; /* centraliza a imagem */
-  border: none; /* remove borda */
-  background-color: transparent; /* remove fundo cinza */
+ background-image: url("../assets/image/delete.png"); 
+  background-position: center; 
+  border: none; 
+  background-color: transparent; 
   color: white;
   padding: 14px 40px;
   font-size: 1.5rem;

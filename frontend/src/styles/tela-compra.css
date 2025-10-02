@@ -283,9 +283,6 @@
   padding-top: 40px;
 }
 
-
-/* --- NOVOS ESTILOS PARA A SEÇÃO DE ENDEREÇO --- */
-
 .enderecos-salvos-lista {
   display: flex;
   flex-direction: column;
@@ -297,7 +294,7 @@
   display: flex;
   align-items: center;
   padding: 20px;
-  border: 2px solid rgba(114, 103, 141, 0.3); /* Borda sutil com cor base */
+  border: 2px solid rgba(114, 103, 141, 0.3); 
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
@@ -310,19 +307,16 @@
   border-color: #c4b5fd;
 }
 
-/* Esconde o input de rádio original */
 .endereco-salvo-item input[type="radio"] {
   display: none;
 }
 
-/* Estilo do item QUANDO SELECIONADO */
 .endereco-salvo-item.selected {
-  border-color: #72678d; /* Cor roxa principal do tema */
+  border-color: #72678d; 
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 12px rgba(114, 103, 141, 0.15);
 }
 
-/* O círculo do nosso botão de rádio customizado */
 .custom-radio {
   width: 20px;
   height: 20px;
@@ -336,25 +330,22 @@
   transition: border-color 0.3s ease;
 }
 
-/* Muda a borda do círculo externo quando selecionado */
 .endereco-salvo-item.selected .custom-radio {
   border-color: #72678d;
 }
 
-/* Círculo interno que aparece quando selecionado */
 .custom-radio::after {
   content: "";
   width: 10px;
   height: 10px;
-  background-color: #72678d; /* Cor roxa principal */
+  background-color: #72678d; 
   border-radius: 50%;
-  transform: scale(0); /* Começa invisível */
+  transform: scale(0); 
   transition: transform 0.2s ease-in-out;
 }
 
-/* Animação do círculo interno ao selecionar */
 .endereco-salvo-item.selected .custom-radio::after {
-  transform: scale(1); /* Fica visível */
+  transform: scale(1); 
 }
 
 .endereco-info {
@@ -376,7 +367,6 @@
   line-height: 1.4;
 }
 
-/* Botão de "Adicionar novo endereço" */
 .btn-adicionar-endereco {
   background-color: transparent;
   color: #72678d;
@@ -397,7 +387,6 @@
   border-style: solid;
 }
 
-/* Animação para o formulário aparecer */
 .form-novo-endereco {
   margin-top: 1.5rem;
   animation: fadeIn 0.5s ease;

@@ -300,7 +300,7 @@
 
 
 .popup-content .choice-button {
-   font-family: "Orbitron", sans-serif; /* Mudei para 'Digital Numbers' */
+   font-family: "Orbitron", sans-serif; 
   font-size: 25px;
   color: var(--h1-color);
   background: none;

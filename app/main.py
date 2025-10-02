@@ -9,7 +9,14 @@ app = FastAPI(title="Sistema de Cadastro", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],  # Specific origins for development
+    allow_origins=[
+        "http://localhost:3000", 
+        "http://127.0.0.1:3000",
+        "https://aury-one.vercel.app", 
+        "https://*.vercel.app",
+        "https://*.netlify.app", 
+        "*"  
+    ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
@@ -22,5 +29,4 @@ if os.path.exists("frontend/dist"):
 
 @app.get("/")
 async def root():
-    """Root endpoint for API health check"""
     return {"message": "API do Sistema de Cadastro está funcionando!"}

@@ -302,21 +302,21 @@ p {
 
 .nav-links a {
   text-decoration: none;
-  color: #72678D; /* <-- COR ALTERADA */
+  color: #72678D; 
   font-size: 1.5rem;
-  font-family: "Josefin Sans", sans-serif; /* <-- FONTE ALTERADA */
-  font-weight: 400; /* Ajustado para um peso que Josefin Sans suporta bem */
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400; 
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #fff; /* Mudei o hover para branco, para dar um bom contraste */
+  color: #fff; 
 }
 
 .aury-image {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 320px; /* Ajuste o tamanho conforme necessário */
+  width: 320px; 
   z-index: 1;
 }
